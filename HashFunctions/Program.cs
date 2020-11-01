@@ -16,6 +16,7 @@ namespace HashFunctions
 			pow.BrootForce();
 			time.Stop();
 			Console.WriteLine($"{time.Elapsed.Minutes} : {time.Elapsed.Seconds}.{time.Elapsed.Milliseconds}");
+			Console.ReadKey();
 			//SHA sha = new SHA();
 			//for (int i = 0; i < 256; i++)
 			//byte[] array = ("Is it real? Niceeee").Select(f => (byte)f).ToArray();

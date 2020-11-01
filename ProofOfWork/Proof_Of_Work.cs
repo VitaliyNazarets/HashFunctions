@@ -16,6 +16,7 @@ namespace ProofOfWork
 	{
 		private readonly int _k;
 		private readonly HashType hash;
+		private static Random random = new Random();
 		public Proof_Of_Work(int k, HashType hashType)
 		{
 			hash = hashType;
@@ -44,15 +45,14 @@ namespace ProofOfWork
 		public void BrootForce()
 		{
 			int len = 0;
-			int paralelTasks = 16;
+			int paralelTasks = 32;
 			bool isColision = false;
 			while (!isColision)
 			{
-				List<Task> tasks = new List<Task>();
 				Parallel.For(len, len + paralelTasks, new ParallelOptions { MaxDegreeOfParallelism = paralelTasks },
-					(i) => 
-				{ 
-					var t = Factorial(i);
+					(i) =>
+				{
+					var t = SHA_gen(i);
 					if (t)
 					{
 						isColision = true;
@@ -62,10 +62,10 @@ namespace ProofOfWork
 			}
 		}
 
-		bool Factorial(int length)
+		bool SHA_gen(int length)
 		{
 			SHA sha = new SHA();
-			var k = Enumerable.Repeat((byte)'x', length).ToArray();
+			var k = Enumerable.Repeat((byte)0x80, length).ToArray();
 			var t = sha.GetHash(k);
 			return IsCollision(ref t);
 		}

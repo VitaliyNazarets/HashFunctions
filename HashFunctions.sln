@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30611.23
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HashFunctions", "HashFunctions\HashFunctions.csproj", "{DFECDB11-DA0C-43EB-9479-DEEF43CA81BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HashFunctions", "HashFunctions\HashFunctions.csproj", "{DFECDB11-DA0C-43EB-9479-DEEF43CA81BC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SHA-256", "SHA-256\SHA-256.csproj", "{F83B6AD5-38FD-4A82-9479-CA615D5B2959}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SHA-256", "SHA-256\SHA-256.csproj", "{F83B6AD5-38FD-4A82-9479-CA615D5B2959}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProofOfWork", "ProofOfWork\ProofOfWork.csproj", "{C1F65836-9CE9-42FE-84D6-D349AA1B210E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProofOfWork", "ProofOfWork\ProofOfWork.csproj", "{C1F65836-9CE9-42FE-84D6-D349AA1B210E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kupyna", "Kupyna\Kupyna.csproj", "{E68D9FAE-414B-44D5-8DF0-BB33C8C3AC25}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{C1F65836-9CE9-42FE-84D6-D349AA1B210E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C1F65836-9CE9-42FE-84D6-D349AA1B210E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C1F65836-9CE9-42FE-84D6-D349AA1B210E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E68D9FAE-414B-44D5-8DF0-BB33C8C3AC25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E68D9FAE-414B-44D5-8DF0-BB33C8C3AC25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E68D9FAE-414B-44D5-8DF0-BB33C8C3AC25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E68D9FAE-414B-44D5-8DF0-BB33C8C3AC25}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
