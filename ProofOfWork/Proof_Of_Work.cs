@@ -21,7 +21,6 @@ namespace ProofOfWork
 			hash = hashType;
 			_k = k;
 		}
-		private byte[] array = new byte[1];
 		bool IsCollision(ref byte[] result)
 		{
 			bool isCollision = true;
@@ -50,18 +49,25 @@ namespace ProofOfWork
 			while (!isColision)
 			{
 				List<Task> tasks = new List<Task>();
-				for (int i = 0; i < paralelTasks; i++)
-				{
-					var task = Task.Run(() =>
+				Parallel.For(len, len + paralelTasks, new ParallelOptions { MaxDegreeOfParallelism = paralelTasks },
+					(i) => 
+				{ 
+					var t = Factorial(i);
+					if (t)
 					{
-						SHA sha = new SHA();
-						var k = Enumerable.Repeat((byte)'x', i).ToArray();
-						var t = sha.GetHash(k);
-					});
-				}
-				Task.WhenAll(tasks);
+						isColision = true;
+					}
+				});
 				len += paralelTasks;
 			}
+		}
+
+		bool Factorial(int length)
+		{
+			SHA sha = new SHA();
+			var k = Enumerable.Repeat((byte)'x', length).ToArray();
+			var t = sha.GetHash(k);
+			return IsCollision(ref t);
 		}
 	}
 }
